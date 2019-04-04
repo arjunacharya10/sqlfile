@@ -1,0 +1,469 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.6deb5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Apr 04, 2019 at 11:56 PM
+-- Server version: 5.7.25-0ubuntu0.18.04.2
+-- PHP Version: 7.2.15-0ubuntu0.18.04.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `musicstore`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Album`
+--
+
+CREATE TABLE `Album` (
+  `aid` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Artists`
+--
+
+CREATE TABLE `Artists` (
+  `sid` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Artists`
+--
+
+INSERT INTO `Artists` (`sid`, `name`) VALUES
+('4aebBr4JAihzJQR0CiIZJv', 'Adele'),
+('6kSuag0fk9FYsw7VVatqRN', 'Alphons Joseph'),
+('6kSuag0fk9FYsw7VVatqRN', 'Ram'),
+('6kSuag0fk9FYsw7VVatqRN', 'Anupama Parameswaran'),
+('1dNIEtp7AY3oDAKCGg2XkH', 'Coldplay'),
+('1dNIEtp7AY3oDAKCGg2XkH', 'The Chainsmokers'),
+('2CX2fjnKQYwiLf7kPwNZne', 'Coldplay'),
+('6RUKPb4LETWmmr3iAEQktW', 'The Chainsmokers'),
+('6RUKPb4LETWmmr3iAEQktW', 'Coldplay'),
+('0tBbt8CrmxbjRP0pueQkyU', 'Marshmello'),
+('0tBbt8CrmxbjRP0pueQkyU', 'Selena Gomez'),
+('0jZO7p0nBUi9VHedWUBS9l', 'Phoebe Bridgers'),
+('0jZO7p0nBUi9VHedWUBS9l', 'Lord Huron'),
+('514rhnksEwHUh6LxXsQ4Y9', 'Selena Gomez'),
+('2jt2WxXMCD4zjACthkJQVE', 'Eminem'),
+('60SdxE8apGAxMiRrpbmLY0', 'Joyner Lucas'),
+('2XTquzYQAdT1Hk78bOUwsv', 'Eminem'),
+('60SdxE8apGAxMiRrpbmLY0', 'Eminem'),
+('0evt4UZbdhnHtcAnxkm6A1', 'Eminem'),
+('6X5OFBbrsHRsyO1zP7udgr', 'Big Shaq'),
+('5JnXwEckWO0oFijOyTZDLf', 'Sid Sriram'),
+('5JnXwEckWO0oFijOyTZDLf', 'Vijay Deverakonda'),
+('5JnXwEckWO0oFijOyTZDLf', 'Rashmika Mandanna'),
+('3KkXRkHbMCARz0aVfEt68P', 'Post Malone'),
+('3KkXRkHbMCARz0aVfEt68P', 'Swae Lee'),
+('2dpaYNEQHiRxtZbfNsse99', 'Marshmello'),
+('2dpaYNEQHiRxtZbfNsse99', 'Bastille'),
+('31OqWK8Lc6GnUbnLG3GqPX', 'Bastille'),
+('31OqWK8Lc6GnUbnLG3GqPX', 'Breathe Carolina'),
+('31OqWK8Lc6GnUbnLG3GqPX', 'Marshmello'),
+('6iihGNcvpnmszjNttzDsFe', 'Boyce Avenue'),
+('4siJOVaRpyJ0v1nHjeY7Dn', 'Axollo'),
+('4siJOVaRpyJ0v1nHjeY7Dn', 'MAJRO'),
+('3hBdMmKw8gvYG6VgCpj32T', 'Arijit Singh'),
+('3hBdMmKw8gvYG6VgCpj32T', 'Sachet-Parampara'),
+('3hBdMmKw8gvYG6VgCpj32T', 'Shahid Kapoor'),
+('3hBdMmKw8gvYG6VgCpj32T', 'Divyendu Sharma'),
+('3hBdMmKw8gvYG6VgCpj32T', 'Yami Gautam'),
+('3hBdMmKw8gvYG6VgCpj32T', 'Shraddha Kapoor'),
+('7kr1ixLomPOwbQAAHaetXw', 'Parekh & Singh'),
+('7arTVunUINTV3DmIk1FmZc', 'Rita Ora'),
+('0BhIs7OcXSJ8VgAlpXrJiS', 'Rita Ora'),
+('3DUTF1DJizRvgHV8ms0Qpm', 'Like-It'),
+('39vrbjCMTRXEdiIr2IsBgd', 'Badshah'),
+('70LA1qeP7w3yVVbW1R56IA', 'Tomas Hilber'),
+('5IX4TbIR5mMHGE4wiWwKW0', 'Metallica'),
+('72jhee1NfryYDcJ9sOvf5e', 'Daler Mehndi'),
+('2g4bwKzf5509SxmVaPFfc3', 'Coldplay'),
+('2g4bwKzf5509SxmVaPFfc3', 'Marcus Daves'),
+('1IjuevPDJ8Sa97wFwQ5j4V', 'Marshmello'),
+('1IjuevPDJ8Sa97wFwQ5j4V', 'Bastille'),
+('1IjuevPDJ8Sa97wFwQ5j4V', 'Frank Walker');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Buys`
+--
+
+CREATE TABLE `Buys` (
+  `uid` int(11) NOT NULL,
+  `sid` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Buys`
+--
+
+INSERT INTO `Buys` (`uid`, `sid`) VALUES
+(8, '4aebBr4JAihzJQR0CiIZJv'),
+(8, '6kSuag0fk9FYsw7VVatqRN'),
+(11, '4aebBr4JAihzJQR0CiIZJv'),
+(11, '6kSuag0fk9FYsw7VVatqRN'),
+(11, '1dNIEtp7AY3oDAKCGg2XkH'),
+(11, '2CX2fjnKQYwiLf7kPwNZne'),
+(8, '2CX2fjnKQYwiLf7kPwNZne'),
+(8, '6RUKPb4LETWmmr3iAEQktW'),
+(8, '0tBbt8CrmxbjRP0pueQkyU'),
+(8, '0jZO7p0nBUi9VHedWUBS9l'),
+(8, '514rhnksEwHUh6LxXsQ4Y9'),
+(8, '2jt2WxXMCD4zjACthkJQVE'),
+(8, '2XTquzYQAdT1Hk78bOUwsv'),
+(8, '60SdxE8apGAxMiRrpbmLY0'),
+(8, '0evt4UZbdhnHtcAnxkm6A1'),
+(11, '2jt2WxXMCD4zjACthkJQVE'),
+(8, '6X5OFBbrsHRsyO1zP7udgr'),
+(8, '5JnXwEckWO0oFijOyTZDLf'),
+(8, '3KkXRkHbMCARz0aVfEt68P'),
+(8, '2dpaYNEQHiRxtZbfNsse99'),
+(8, '31OqWK8Lc6GnUbnLG3GqPX'),
+(8, '6iihGNcvpnmszjNttzDsFe'),
+(8, '4siJOVaRpyJ0v1nHjeY7Dn'),
+(15, '3hBdMmKw8gvYG6VgCpj32T'),
+(8, '0tBbt8CrmxbjRP0pueQkyU'),
+(8, '7kr1ixLomPOwbQAAHaetXw'),
+(8, '7arTVunUINTV3DmIk1FmZc'),
+(8, '0BhIs7OcXSJ8VgAlpXrJiS'),
+(8, '3DUTF1DJizRvgHV8ms0Qpm'),
+(8, '39vrbjCMTRXEdiIr2IsBgd'),
+(8, '70LA1qeP7w3yVVbW1R56IA'),
+(8, '5IX4TbIR5mMHGE4wiWwKW0'),
+(8, '72jhee1NfryYDcJ9sOvf5e'),
+(8, '2g4bwKzf5509SxmVaPFfc3'),
+(8, '1IjuevPDJ8Sa97wFwQ5j4V');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Feedback`
+--
+
+CREATE TABLE `Feedback` (
+  `uid` int(11) NOT NULL,
+  `subject` text NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Feedback`
+--
+
+INSERT INTO `Feedback` (`uid`, `subject`, `message`) VALUES
+(8, 'Not workin', 'awdfsasdf asdfhadsf kjadsfkjhadfskjadf asdjfhakjdfshkajsdfma sdfasdhfkjasdhfkjadhsfkasdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Follows`
+--
+
+CREATE TABLE `Follows` (
+  `uid` int(11) NOT NULL,
+  `fid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Follows`
+--
+
+INSERT INTO `Follows` (`uid`, `fid`) VALUES
+(11, 8),
+(12, 8),
+(23, 8),
+(8, 11),
+(12, 11),
+(8, 12),
+(23, 12),
+(8, 13),
+(8, 14),
+(8, 15),
+(12, 15),
+(8, 16),
+(8, 23);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MadeOf`
+--
+
+CREATE TABLE `MadeOf` (
+  `pid` int(11) NOT NULL,
+  `sid` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `MadeOf`
+--
+
+INSERT INTO `MadeOf` (`pid`, `sid`) VALUES
+(55, '1dNIEtp7AY3oDAKCGg2XkH'),
+(54, '2CX2fjnKQYwiLf7kPwNZne'),
+(55, '2CX2fjnKQYwiLf7kPwNZne'),
+(55, '2jt2WxXMCD4zjACthkJQVE'),
+(46, '3hBdMmKw8gvYG6VgCpj32T'),
+(56, '3hBdMmKw8gvYG6VgCpj32T'),
+(52, '4aebBr4JAihzJQR0CiIZJv'),
+(54, '4aebBr4JAihzJQR0CiIZJv'),
+(32, '6kSuag0fk9FYsw7VVatqRN'),
+(51, '6kSuag0fk9FYsw7VVatqRN'),
+(52, '6kSuag0fk9FYsw7VVatqRN'),
+(54, '6kSuag0fk9FYsw7VVatqRN'),
+(55, '6kSuag0fk9FYsw7VVatqRN'),
+(54, '6RUKPb4LETWmmr3iAEQktW');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Playlist`
+--
+
+CREATE TABLE `Playlist` (
+  `pid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Playlist`
+--
+
+INSERT INTO `Playlist` (`pid`, `uid`, `name`, `image`) VALUES
+(32, 11, 'hello', 'https://i.scdn.co/image/706834f25e3b96ddc4643277e11333f0a8ca16c0'),
+(44, 11, 'ssup', 'https://i.scdn.co/image/4c45b4ad2a79f5a345e854180cec249731db1908'),
+(46, 15, 'Gym', 'https://i.scdn.co/image/684fc11b8131cdf4a9fa021f8d609fa6a84e60b1'),
+(51, 8, 'random', 'https://i.scdn.co/image/8032b5be825a0b6bd4c0e066be99ab6d1bf744f5'),
+(52, 8, 'pandu', 'https://i.scdn.co/image/98f137eaeb6879d367dd8122c489eeb80ace8e40'),
+(54, 8, 'My Story', 'https://i.scdn.co/image/98f137eaeb6879d367dd8122c489eeb80ace8e40'),
+(55, 11, 'My Story', 'https://i.scdn.co/image/4c45b4ad2a79f5a345e854180cec249731db1908'),
+(56, 15, 'My Story', 'https://i.scdn.co/image/684fc11b8131cdf4a9fa021f8d609fa6a84e60b1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Songs`
+--
+
+CREATE TABLE `Songs` (
+  `sid` varchar(255) NOT NULL,
+  `sname` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Songs`
+--
+
+INSERT INTO `Songs` (`sid`, `sname`, `image`, `link`) VALUES
+('0BhIs7OcXSJ8VgAlpXrJiS', 'Let You Love Me', 'https://i.scdn.co/image/c9d27be371dd80f60a3cd2f2a406db1598fc2820', 'https://open.spotify.com/track/0BhIs7OcXSJ8VgAlpXrJiS'),
+('0evt4UZbdhnHtcAnxkm6A1', 'Normal', 'https://i.scdn.co/image/706834f25e3b96ddc4643277e11333f0a8ca16c0', 'https://open.spotify.com/track/0evt4UZbdhnHtcAnxkm6A1'),
+('0jZO7p0nBUi9VHedWUBS9l', 'The Night We Met (feat. Phoebe Bridgers)', 'https://i.scdn.co/image/8032b5be825a0b6bd4c0e066be99ab6d1bf744f5', 'https://open.spotify.com/track/0jZO7p0nBUi9VHedWUBS9l'),
+('0tBbt8CrmxbjRP0pueQkyU', 'Wolves', 'https://i.scdn.co/image/b6a933d480c7a2ddee8e258df98a588d4c9f396e', 'https://open.spotify.com/track/0tBbt8CrmxbjRP0pueQkyU'),
+('1dNIEtp7AY3oDAKCGg2XkH', 'Something Just Like This', 'https://i.scdn.co/image/4c45b4ad2a79f5a345e854180cec249731db1908', 'https://open.spotify.com/track/1dNIEtp7AY3oDAKCGg2XkH'),
+('1IjuevPDJ8Sa97wFwQ5j4V', 'Happier - Frank Walker Remix', 'https://i.scdn.co/image/c52349c5b418eb00cb798de27227664898227cf7', 'https://open.spotify.com/track/1IjuevPDJ8Sa97wFwQ5j4V'),
+('2CX2fjnKQYwiLf7kPwNZne', 'The Scientist', 'https://i.scdn.co/image/98f137eaeb6879d367dd8122c489eeb80ace8e40', 'https://open.spotify.com/track/2CX2fjnKQYwiLf7kPwNZne'),
+('2dpaYNEQHiRxtZbfNsse99', 'Happier', 'https://i.scdn.co/image/600b9b6e68c7d63495d653d544a9bbbbe380f194', 'https://open.spotify.com/track/2dpaYNEQHiRxtZbfNsse99'),
+('2g4bwKzf5509SxmVaPFfc3', 'Yellow - Acoustic Cover', 'https://i.scdn.co/image/72d6295702beffb11058fcefda0f13a796555dae', 'https://open.spotify.com/track/2g4bwKzf5509SxmVaPFfc3'),
+('2jt2WxXMCD4zjACthkJQVE', 'The Ringer', 'https://i.scdn.co/image/706834f25e3b96ddc4643277e11333f0a8ca16c0', 'https://open.spotify.com/track/2jt2WxXMCD4zjACthkJQVE'),
+('2XTquzYQAdT1Hk78bOUwsv', 'Greatest', 'https://i.scdn.co/image/706834f25e3b96ddc4643277e11333f0a8ca16c0', 'https://open.spotify.com/track/2XTquzYQAdT1Hk78bOUwsv'),
+('31OqWK8Lc6GnUbnLG3GqPX', 'Happier - Breathe Carolina Remix', 'https://i.scdn.co/image/c52349c5b418eb00cb798de27227664898227cf7', 'https://open.spotify.com/track/31OqWK8Lc6GnUbnLG3GqPX'),
+('39vrbjCMTRXEdiIr2IsBgd', 'She Move It Like', 'https://i.scdn.co/image/6cd360efa9dc66347effcb2cadec2a84ff163300', 'https://open.spotify.com/track/39vrbjCMTRXEdiIr2IsBgd'),
+('3cpdOEzOQHHYClPyCLc1Y5', 'Hello', 'https://i.scdn.co/image/c114b4b938926191d2068ab1a10d6727d0fc63d7', 'https://open.spotify.com/track/3cpdOEzOQHHYClPyCLc1Y5'),
+('3DUTF1DJizRvgHV8ms0Qpm', 'Nádech', 'https://i.scdn.co/image/35ae89ea22a5a3917a6eba9bb75e47321f4c25b2', 'https://open.spotify.com/track/3DUTF1DJizRvgHV8ms0Qpm'),
+('3hBdMmKw8gvYG6VgCpj32T', 'Har Har Gange (From \"Batti Gul Meter Chalu\")', 'https://i.scdn.co/image/684fc11b8131cdf4a9fa021f8d609fa6a84e60b1', 'https://open.spotify.com/track/3hBdMmKw8gvYG6VgCpj32T'),
+('3KkXRkHbMCARz0aVfEt68P', 'Sunflower - Spider-Man: Into the Spider-Verse', 'https://i.scdn.co/image/c30bfc4adfa8924e87f3dff571d0d8c6f032fa0a', 'https://open.spotify.com/track/3KkXRkHbMCARz0aVfEt68P'),
+('4aebBr4JAihzJQR0CiIZJv', 'Hello', 'https://i.scdn.co/image/5fcea2eb9b4735d28ca058d65bf1ded516eb46c8', 'https://open.spotify.com/track/4aebBr4JAihzJQR0CiIZJv'),
+('4siJOVaRpyJ0v1nHjeY7Dn', 'Versailles', 'https://i.scdn.co/image/a3db2cb8c6e100ee158a44cdd5f8228e5e9dfded', 'https://open.spotify.com/track/4siJOVaRpyJ0v1nHjeY7Dn'),
+('514rhnksEwHUh6LxXsQ4Y9', 'Back To You', 'https://i.scdn.co/image/8032b5be825a0b6bd4c0e066be99ab6d1bf744f5', 'https://open.spotify.com/track/514rhnksEwHUh6LxXsQ4Y9'),
+('5IX4TbIR5mMHGE4wiWwKW0', 'One', 'https://i.scdn.co/image/7ee646bea4bac3eb22280969e222aaddd4ac8b17', 'https://open.spotify.com/track/5IX4TbIR5mMHGE4wiWwKW0'),
+('5JnXwEckWO0oFijOyTZDLf', 'Inkem Inkem Inkem Kaavaale', 'https://i.scdn.co/image/cef48588e252363fae42c4f4d450eba62588cc60', 'https://open.spotify.com/track/5JnXwEckWO0oFijOyTZDLf'),
+('60SdxE8apGAxMiRrpbmLY0', 'Lucky You (feat. Joyner Lucas)', 'https://i.scdn.co/image/706834f25e3b96ddc4643277e11333f0a8ca16c0', 'https://open.spotify.com/track/60SdxE8apGAxMiRrpbmLY0'),
+('6iihGNcvpnmszjNttzDsFe', 'Happier', 'https://i.scdn.co/image/2aad4847f97a8db42d2f58d0135abe0a8a2232e4', 'https://open.spotify.com/track/6iihGNcvpnmszjNttzDsFe'),
+('6kSuag0fk9FYsw7VVatqRN', 'My World Is Flying', 'https://i.scdn.co/image/7fbf323a5209f25fe63b2e2a8e3a603fdb1e95ef', 'https://open.spotify.com/track/6kSuag0fk9FYsw7VVatqRN'),
+('6LXu7ZD3tF44X9VhoZaQjR', 'Hello Hello', 'https://i.scdn.co/image/86f611298ea4d3d2b6f9df5be8585aa7d626feda', 'https://open.spotify.com/track/6LXu7ZD3tF44X9VhoZaQjR'),
+('6RUKPb4LETWmmr3iAEQktW', 'Something Just Like This', 'https://i.scdn.co/image/ec1d389f4b448463b81513c0c5d5e1f6c34faa63', 'https://open.spotify.com/track/6RUKPb4LETWmmr3iAEQktW'),
+('6X5OFBbrsHRsyO1zP7udgr', 'Man\'s Not Hot', 'https://i.scdn.co/image/c6d4d97750fce318dfd3b67f712e5bd37ac22fea', 'https://open.spotify.com/track/6X5OFBbrsHRsyO1zP7udgr'),
+('70LA1qeP7w3yVVbW1R56IA', 'Game of Thrones Theme', 'https://i.scdn.co/image/15f99dff4bc6d7dab8c965ea8d0e07c08a26ab4a', 'https://open.spotify.com/track/70LA1qeP7w3yVVbW1R56IA'),
+('72jhee1NfryYDcJ9sOvf5e', 'Bolo Ta Ra Ra (From \"Bolo Ta Ra Ra\")', 'https://i.scdn.co/image/0b589866c8996499fd53be7c968eac027bec4f75', 'https://open.spotify.com/track/72jhee1NfryYDcJ9sOvf5e'),
+('7arTVunUINTV3DmIk1FmZc', 'Anywhere', 'https://i.scdn.co/image/c9d27be371dd80f60a3cd2f2a406db1598fc2820', 'https://open.spotify.com/track/7arTVunUINTV3DmIk1FmZc'),
+('7kr1ixLomPOwbQAAHaetXw', 'Hello', 'https://i.scdn.co/image/92c8f355af5169dc7a87b51cdd9f7701a89f2f0e', 'https://open.spotify.com/track/7kr1ixLomPOwbQAAHaetXw');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Users`
+--
+
+CREATE TABLE `Users` (
+  `ID` int(11) NOT NULL,
+  `NAME` varchar(30) DEFAULT NULL,
+  `EMAIL` varchar(255) DEFAULT NULL,
+  `PASSWORD` varchar(255) DEFAULT NULL,
+  `AVATAR` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Users`
+--
+
+INSERT INTO `Users` (`ID`, `NAME`, `EMAIL`, `PASSWORD`, `AVATAR`) VALUES
+(8, 'Arjun', 'aa@gmail.com', '$2b$10$KsiEw0DvCLyy8Y1rvYwidONNAR7gfJe73HfRVN4VESCaurOiFIrfa', 'https://api.adorable.io/avatars/285/Arjun'),
+(11, 'Abhinav', 'test@gmail.com', '$2b$10$Uklu8U2UJh6DDe5m1WMW1.HkccvZsvYhgYjspWQyi6Pi4RltJPIk.', 'https://api.adorable.io/avatars/285/Abhinav'),
+(12, 'Samarth', 'sam@gmail.com', '$2b$10$KruufNFQrHBqlwGPwmwteeCA5pt1CMIz8Sz4z7Elql31x7hbyJvlu', 'https://api.adorable.io/avatars/285/Samarth'),
+(13, 'Shashank', 'shank@gmail.com', '$2b$10$TKp3IyfV/UINDH5z2YUI.OunhD.EqVd1Hh0tt6jSJa84EUrxikS1a', 'https://api.adorable.io/avatars/285/Shashank'),
+(14, 'punisher', 'punish@gmail.com', '$2b$10$k3jszZlfG8pgb1uHk.8iSOEROFKyt4p2XsKJjyI6tsF6F7GL9603W', 'https://api.adorable.io/avatars/285/punisher'),
+(15, 'Srihari', 'sri@gmail.com', '$2b$10$hFNY9skuIUzUe/OIbguiBuyC7FagbXG65ALt4AU.gBKc0juDqCDZq', 'https://api.adorable.io/avatars/285/Srihari'),
+(16, 'Testing', 'tests@gmail.com', '$2b$10$L17J66U4SOJqjov08Cg2gerCf2mxHzUv83X/zxBeIYTOl1gN8Iy.i', 'https://api.adorable.io/avatars/285/Testing'),
+(23, 'Arjun Acharya', 'arjunchangeeacharya1998@gmail.com', '$2b$10$fgFK7GwEhp.kg3/UzqAYHex0e6oElZDQWCAeqVRbhu2kjuhFDgqvW', 'https://lh6.googleusercontent.com/--RIhwSc7k5M/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rfH0S-maw5IvyAsZvxe5HRfjDT9Nw/mo/photo.jpg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Album`
+--
+ALTER TABLE `Album`
+  ADD PRIMARY KEY (`aid`);
+
+--
+-- Indexes for table `Artists`
+--
+ALTER TABLE `Artists`
+  ADD KEY `sid` (`sid`);
+
+--
+-- Indexes for table `Buys`
+--
+ALTER TABLE `Buys`
+  ADD KEY `uid` (`uid`),
+  ADD KEY `sid` (`sid`);
+
+--
+-- Indexes for table `Feedback`
+--
+ALTER TABLE `Feedback`
+  ADD KEY `uid` (`uid`);
+
+--
+-- Indexes for table `Follows`
+--
+ALTER TABLE `Follows`
+  ADD UNIQUE KEY `uid` (`uid`,`fid`),
+  ADD KEY `fid` (`fid`);
+
+--
+-- Indexes for table `MadeOf`
+--
+ALTER TABLE `MadeOf`
+  ADD UNIQUE KEY `pid` (`pid`,`sid`),
+  ADD KEY `sid` (`sid`);
+
+--
+-- Indexes for table `Playlist`
+--
+ALTER TABLE `Playlist`
+  ADD PRIMARY KEY (`pid`,`uid`),
+  ADD UNIQUE KEY `uid` (`uid`,`name`);
+
+--
+-- Indexes for table `Songs`
+--
+ALTER TABLE `Songs`
+  ADD PRIMARY KEY (`sid`);
+
+--
+-- Indexes for table `Users`
+--
+ALTER TABLE `Users`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `muc` (`EMAIL`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Album`
+--
+ALTER TABLE `Album`
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `Playlist`
+--
+ALTER TABLE `Playlist`
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+--
+-- AUTO_INCREMENT for table `Users`
+--
+ALTER TABLE `Users`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Artists`
+--
+ALTER TABLE `Artists`
+  ADD CONSTRAINT `Artists_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `Songs` (`sid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Buys`
+--
+ALTER TABLE `Buys`
+  ADD CONSTRAINT `Buys_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `Users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Buys_ibfk_2` FOREIGN KEY (`sid`) REFERENCES `Songs` (`sid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Feedback`
+--
+ALTER TABLE `Feedback`
+  ADD CONSTRAINT `Feedback_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `Users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Follows`
+--
+ALTER TABLE `Follows`
+  ADD CONSTRAINT `Follows_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `Users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Follows_ibfk_2` FOREIGN KEY (`fid`) REFERENCES `Users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `MadeOf`
+--
+ALTER TABLE `MadeOf`
+  ADD CONSTRAINT `MadeOf_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `Playlist` (`pid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `MadeOf_ibfk_2` FOREIGN KEY (`sid`) REFERENCES `Songs` (`sid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Playlist`
+--
+ALTER TABLE `Playlist`
+  ADD CONSTRAINT `uid_update` FOREIGN KEY (`uid`) REFERENCES `Users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
